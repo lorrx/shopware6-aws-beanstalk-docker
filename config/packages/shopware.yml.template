@@ -1,0 +1,41 @@
+shopware:
+  filesystem:
+    public:
+      type: "amazon-s3"
+      url: "https://{my-cdn-url}"
+      config:
+        bucket: "{storage-bucket-name}"
+        region: "eu-central-1"
+        endpoint: "https://s3.eu-central-1.amazonaws.com/{storage-bucket-name}"
+        root: "/"
+        options:
+          visibility: "public"
+    private:
+      type: "amazon-s3"
+      config:
+        bucket: "{storage-bucket-name}"
+        region: "eu-central-1"
+        endpoint: "https://s3.eu-central-1.amazonaws.com/{storage-bucket-name}"
+        root: "/private"
+        options:
+          visibility: "private"
+    theme:
+      type: "amazon-s3"
+      url: "https://{my-cdn-url}/theme"
+      config:
+        bucket: "{storage-bucket-name}"
+        region: "eu-central-1"
+        endpoint: "https://s3.eu-central-1.amazonaws.com/{storage-bucket-name}"
+        root: "/theme"
+        options:
+          visibility: "public"
+    sitemap:
+      type: "amazon-s3"
+      url: "https://{my-cdn-url}/sitemap"
+      config:
+        bucket: "{storage-bucket-name}"
+        region: "eu-central-1"
+        endpoint: "https://s3.eu-central-1.amazonaws.com/{storage-bucket-name}"
+        root: "/sitemap"
+        options:
+          visibility: "public"

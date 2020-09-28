@@ -1,0 +1,14 @@
+{
+  "Image": {
+    "Name": "image-name",
+    "Update": "true"
+  },
+  "Ports": [
+    {
+      "ContainerPort": 5000,
+      "HostPort": 80
+    }
+  ],
+  "Logging": "/var/log/nginx",
+  "Entrypoint": "/var/www/html/shopware/sbin/entrypoint.sh"
+}
