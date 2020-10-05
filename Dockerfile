@@ -34,6 +34,8 @@ RUN unzip ${SHOPWARE_INSTALL_FILE}.zip && rm ${SHOPWARE_INSTALL_FILE}.zip
 COPY config/ ./config
 COPY env/ ./
 RUN composer install
+RUN composer require shopware-pwa/shopware-pwa
+
 RUN chown -R www-data:www-data /var/www/html/shopware
 RUN chmod -R 755 /var/www/html/shopware
 RUN ln -s /etc/nginx/sites-available/shopware.conf /etc/nginx/sites-enabled/
